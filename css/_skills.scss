@@ -1,0 +1,51 @@
+// Tech Stack внутри Hero-колонки
+.tech-stack-hero {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 100%;
+
+  .tech-stack-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .tech-stack-list {
+    display: flex;
+    flex-wrap: wrap; // Даем пилюлям аккуратно переноситься, если экран сужается
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    background: rgba(4, 28, 36, 0.7);
+    border: 1px solid rgba(0, 229, 191, 0.28);
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #e2f1f5;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+    transition: all 0.25s ease;
+
+    .pill-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: #00e5bf;
+      background: rgba(0, 229, 191, 0.12);
+      color: #ffffff;
+    }
+  }
+}

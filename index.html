@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmented Engineer & Frontend Developer</title>
+    <meta
+        name="description"
+        content="Портфолио frontend-разработчика Владимира. Создание современных, быстрых и надежных веб-приложений с AI-акселерацией."
+    >
+    <meta name="author" content="Владимир (Augmented Engineer)">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://augmented-engineer.github.io/">
+
+    <!-- Open Graph / Facebook / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://augmented-engineer.github.io/">
+    <meta property="og:title" content="Владимир | Augmented Engineer & Frontend Developer">
+    <meta property="og:description" content="Разработка производительных веб-приложений и SPA с чистой архитектурой и AI-акселерацией. React, TypeScript, Vue.">
+    <meta property="og:image" content="https://augmented-engineer.github.io/img/profile-image.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Владимир | Augmented Engineer & Frontend Developer">
+    <meta name="twitter:description" content="Разработка производительных веб-приложений и SPA с чистой архитектурой и AI-акселерацией.">
+    <meta name="twitter:image" content="https://augmented-engineer.github.io/img/profile-image.jpg">
+
+    <!-- Структурированные данные Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Владимир",
+      "alternateName": "Augmented Engineer",
+      "jobTitle": "Frontend Developer",
+      "url": "https://augmented-engineer.github.io/",
+      "sameAs": [
+        "https://github.com/Augmented-Engineer",
+        "https://t.me/tarnex_new"
+      ],
+      "knowsAbout": [
+        "Frontend Development",
+        "TypeScript",
+        "React",
+        "Vue.js",
+        "Tailwind CSS",
+        "Web Performance",
+        "UI/UX"
+      ]
+    }
+    </script>
+
+    <!-- Скрипт быстрого снятия прелоадера при загрузке CSS -->
+    <script>
+        document.documentElement.classList.add('is-loading');
+        window.__siteCssLoaded = false;
+
+        window.markSiteCssLoaded = () => {
+            window.__siteCssLoaded = true;
+            const hidePreloader = () => {
+                const preloader = document.getElementById('preloader');
+                if (!preloader) return;
+                preloader.classList.add('is-hidden');
+                document.documentElement.classList.remove('is-loading');
+                setTimeout(() => preloader.remove(), 600);
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', hidePreloader, { once: true });
+            } else {
+                hidePreloader();
+            }
+        };
+    </script>
+
+        <!-- Оптимизация загрузки шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link
+        id="main-stylesheet"
+        rel="stylesheet"
+        href="css/style.css"
+        onload="markSiteCssLoaded()"
+    >
+
+    <style>
+        html.is-loading,
+        html.is-loading body {
+            overflow: hidden;
+        }
+
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100dvh;
+            box-sizing: border-box;
+            background: var(--card-bg, #10111c);
+            color: var(--color-text, #f5f5ff);
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .5s ease, visibility .5s ease;
+        }
+
+        .preloader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .preloader__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: min(90%, 360px);
+            text-align: center;
+        }
+
+        .preloader__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 82px;
+            height: 82px;
+            margin-bottom: 22px;
+            border: 1px solid var(--card-border, #303348);
+            border-radius: 24px;
+            background: var(--surface-glass, rgba(255,255,255,.04));
+            color: var(--color-primary, #7257ff);
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -0.08em;
+            box-shadow: 0 0 40px rgba(114, 87, 255, .18);
+            animation: preloader-logo 2s ease-in-out infinite;
+        }
+
+        .preloader__brand {
+            margin-bottom: 28px;
+            color: var(--color-text, #f5f5ff);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+        }
+
+        .preloader__loader {
+            position: relative;
+            width: 180px;
+            height: 3px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: var(--card-border, #303348);
+        }
+
+        .preloader__loader span {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 40%;
+            border-radius: inherit;
+            background: var(--color-primary, #7257ff);
+            box-shadow: 0 0 14px rgba(114, 87, 255, .7);
+            animation: preloader-progress 1.4s ease-in-out infinite;
+        }
+
+        .preloader__status {
+            margin: 14px 0 0;
+            color: var(--color-text-secondary, #a6a8b8);
+            font-size: .85rem;
+        }
+
+        @keyframes preloader-logo {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-4px) scale(1.03); }
+        }
+
+        @keyframes preloader-progress {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(450%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .preloader__logo,
+            .preloader__loader span { animation: none; }
+        }
+    </style>
+
+<style id="scroll-reveal-styles">
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+
+</head>
+
+<body>
+<div class="preloader" id="preloader" aria-label="Загрузка сайта" role="status">
+    <div class="preloader__content">
+        <div class="preloader__logo" aria-hidden="true">AE</div>
+        <div class="preloader__brand">Augmented_Engineer</div>
+        <div class="preloader__loader" aria-hidden="true"><span></span></div>
+        <p class="preloader__status">Загрузка</p>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <a href="#top" class="logo-link" aria-label="Augmented_Engineer - на главную">
+            <span class="logo-v">A</span>
+            <span class="logo-brand-tag">Augmented_Engineer</span>
+        </a>
+
+        <!-- Главное меню -->
+        <nav class="nav" id="main-navigation" aria-label="Основная навигация">
+            <ul>
+                <li><a href="#top" class="active">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#workflow">Процесс</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            <a href="#contacts" class="btn-header-contact">Связаться</a>
+            <button class="burger-btn" id="burger-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="menu-backdrop" id="menu-backdrop"></div>
+</header>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="top">
+        <div class="container hero-layout">
+            <div class="hero-left">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span class="status-prefix">AI-Augmented</span> • Доступен для предложений
+                </div>
+
+                <h1 class="hero-title">
+                    Создаю быстрые <br>
+                    <span>веб-интерфейсы</span> с чистой архитектурой.
+                </h1>
+
+                <p class="hero-desc">
+                    Привет, я Владимир - frontend-разработчик. Специализируюсь на создании отзывчивых веб-приложений с чистой архитектурой, высокой производительностью и продуманным UX.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="cv.pdf" download class="btn btn-primary">Скачать CV</a>
+                    <a href="#contacts" class="btn btn-outline">Связаться</a>
+                </div>
+
+                <!-- Стек технологий -->
+                <div class="tech-stack-hero">
+                    <p class="tech-stack-title">Tech Stack</p>
+                    <div class="tech-stack-list">
+                        <span class="tech-pill"><span class="pill-tag ts">TS</span> TypeScript</span>
+                        <span class="tech-pill"><span class="pill-tag vue">V</span> Vue.js</span>
+                        <span class="tech-pill"><span class="pill-tag react">⚛</span> React</span>
+                        <span class="tech-pill"><span class="pill-tag tw">≈</span> Tailwind</span>
+                        <span class="tech-pill"><span class="pill-tag vite">⚡</span> Vite</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="dev-card">
+                    <div class="dev-card-header">
+                        <div class="card-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="card-file">engineer.config.ts</span>
+                        <span class="card-badge">PROD</span>
+                    </div>
+
+                    <div class="dev-card-profile">
+                        <div class="avatar-ring">
+                            <img src="img/profile-image.jpg" alt="Vladimir Mascot" class="dev-avatar">
+                        </div>
+                        <div class="avatar-meta">
+                            <div class="meta-name">Vladimir</div>
+                            <div class="meta-role">Augmented Engineer • 2+ года опыта</div>
+                        </div>
+                    </div>
+
+                    <div class="dev-code-block">
+<pre><code><span class="c-kw">const</span> <span class="c-var">skills</span> = {
+  <span class="c-prop">core</span>: [<span class="c-str">'TypeScript'</span>, <span class="c-str">'JavaScript'</span>],
+  <span class="c-prop">frameworks</span>: [<span class="c-str">'Vue 3'</span>, <span class="c-str">'Nuxt'</span>, <span class="c-str">'React'</span>],
+  <span class="c-prop">styling</span>: [<span class="c-str">'Tailwind'</span>, <span class="c-str">'SCSS'</span>],
+  <span class="c-prop">architecture</span>: <span class="c-str">'Clean, Modular, Tested'</span>,
+  <span class="c-prop">status</span>: <span class="c-bool">true</span>
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about reveal" id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="about-bento reveal">
+                <div class="bento-card bento-card--main">
+                    <span class="bento-badge">Инженерный профиль</span>
+                    <h2 id="about-title">Обо мне</h2>
+                    <p class="about-lead reveal">
+                        Специализируюсь на фронтенд-разработке современных SPA и масштабируемых веб-приложений.
+                    </p>
+                    <p class="about-subtext reveal">
+                        Фокусируюсь на предсказуемом стейт-менеджменте, модульности и высокой скорости рендеринга (Core Web Vitals). Выбираю проверенные инструменты под конкретную бизнес-задачу.
+                    </p>
+                </div>
+
+                <div class="bento-side">
+                    <div class="bento-card bento-stat">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-info">
+                            <strong>Года коммерческого опыта</strong>
+                            <span>Разработка SPA, дашбордов и интерфейсов</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-stat">
+                        <div class="stat-icon-wrap">
+                            <span class="stat-symbol">⚡</span>
+                        </div>
+                        <div class="stat-info">
+                            <strong>Производительность и UX</strong>
+                            <span>Оптимизация бандла, a11y и быстрый отклик</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-stat">
+                        <div class="stat-icon-wrap">
+                            <span class="stat-symbol">⚙</span>
+                        </div>
+                        <div class="stat-info">
+                            <strong>Инженерный подход</strong>
+                            <span>Типизация, модульность и читаемый код</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section class="advantages reveal" id="advantages" aria-labelledby="why-me">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Преимущества</span>
+                <h2 id="why-me">Почему я</h2>
+            </div>
+            <div class="advantages__grid">
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Быстро</h3>
+                    <p>Пишу оптимизированный код, использую современные инструменты и соблюдаю согласованные сроки.</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="10" rx="2"/>
+                            <circle cx="12" cy="5" r="2"/>
+                            <path d="M12 7v4"/>
+                            <line x1="8" y1="16" x2="8" y2="16"/>
+                            <line x1="16" y1="16" x2="16" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3>AI как инструмент</h3>
+                    <p>Использую ИИ для ускорения разработки, поиска решений и рутины. Код понимаю, проверяю и дорабатываю сам - без подхода «скопировать вслепую».</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Инженерный подход</h3>
+                    <p>Разбираюсь в том, что пишу: анализирую архитектуру, проверяю решения и думаю о поддержке кода, а не только о том, чтобы он заработал сейчас.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="portfolio reveal" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Портфолио</span>
+                <h2 id="projects-title">Избранные проекты</h2>
+                <p class="section-subtitle">Практические работы с упором на скорость, отзывчивый интерфейс и структуру кода.</p>
+            </div>
+
+            <div class="portfolio__grid">
+                <!-- Project 1: Tasks & Finance Planner -->
+                <article class="project-card reveal reveal-delay-1">
+                    <div class="project-preview">
+                        <div class="screen-mockup">
+                            <div class="mockup-header">
+                                <span class="mock-dot red"></span>
+                                <span class="mock-dot yellow"></span>
+                                <span class="mock-dot green"></span>
+                                <span class="mock-url">planner.internal/workspace</span>
+                            </div>
+                            <a href="./projects/tasks/index.html" target="_blank" rel="noopener noreferrer">
+                                <img src="img/tasksWeb.png" alt="Tasks & Finance Planner" class="mockup-img" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title-row">
+                            <h3><a href="./projects/tasks/index.html" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Tasks & Finance Planner</a></h3>
+                            <div class="project-links">
+                                <a href="./projects/tasks/index.html" target="_blank" rel="noopener noreferrer" class="project-ext-link" title="Открыть демо" aria-label="Открыть демо Tasks & Finance Planner">↗</a>
+                            </div>
+                        </div>
+                        <p>Десктопный и мобильный дашборд: планирование задач, учет финансов с переходящим бюджетом, долги, аналитика и локальная база Dexie.js.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Dexie.js</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Project Pulse -->
+                <article class="project-card reveal reveal-delay-2">
+                    <div class="project-preview">
+                        <div class="screen-mockup">
+                            <div class="mockup-header">
+                                <span class="mock-dot red"></span>
+                                <span class="mock-dot yellow"></span>
+                                <span class="mock-dot green"></span>
+                                <span class="mock-url">pulse-analytics.internal/dashboard</span>
+                            </div>
+                            <a href="./projects/pulse/index.html" target="_blank" rel="noopener noreferrer">
+                                <img src="img/project-pulse.png" alt="Project Pulse Preview" class="mockup-img" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title-row">
+                            <h3>Project Pulse</h3>
+                            <div class="project-links">
+                                <a href="./projects/pulse/index.html" target="_blank" rel="noopener noreferrer" class="project-ext-link" title="Открыть демо" aria-label="Открыть демо Project Pulse">↗</a>
+                            </div>
+                        </div>
+                        <p>Аналитический дашборд метрик и задач. Модульная архитектура компонентов, интерактивные графики, фильтрация данных и адаптивный интерфейс.</p>
+                        <div class="project-tags">
+                            <span>React 19</span>
+                            <span>TypeScript</span>
+                            <span>Tailwind CSS</span>
+                            <span>Lucide Icons</span>
+                            <span>Vite</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: CardCraft -->
+                <article class="project-card reveal reveal-delay-3">
+                    <div class="project-preview">
+                        <div class="screen-mockup">
+                            <div class="mockup-header">
+                                <span class="mock-dot red"></span>
+                                <span class="mock-dot yellow"></span>
+                                <span class="mock-dot green"></span>
+                                <span class="mock-url">cards.internal/editor</span>
+                            </div>
+                            <a href="./projects/cards/index.html" target="_blank" rel="noopener noreferrer">
+                                <img src="img/project-cards.png" alt="CardCraft Preview" class="mockup-img" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title-row">
+                            <h3>CardCraft</h3>
+                            <div class="project-links">
+                                <a href="./projects/cards/index.html" target="_blank" rel="noopener noreferrer" class="project-ext-link" title="Открыть демо" aria-label="Открыть демо CardCraft">↗</a>
+                            </div>
+                        </div>
+                        <p>Веб-редактор карточек товаров. Управление слоями, динамические мобильные шторки, кастомные жесты масштабирования и экспорт макетов.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>SCSS</span>
+                            <span>Vite</span>
+                            <span>Mobile UX</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="workflow reveal" id="workflow" aria-labelledby="workflow-title">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Пайплайн</span>
+                <h2 id="workflow-title">Процесс работы</h2>
+                <p class="section-subtitle">Понятные и прозрачные этапы разработки от первой идеи до релиза.</p>
+            </div>
+
+            <div class="workflow__grid">
+                <div class="step-card">
+                    <div class="step-top">
+                        <span class="step-num">01</span>
+                        <span class="step-dot"></span>
+                    </div>
+                    <h3>Задача и цели</h3>
+                    <p>Погружаюсь в требования, определяю контекст задачи, целевую аудиторию и ключевые технические ограничения проекта.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-top">
+                        <span class="step-num">02</span>
+                        <span class="step-dot"></span>
+                    </div>
+                    <h3>Архитектура и план</h3>
+                    <p>Продумываю структуру модулей, выбор библиотек, схему данных, роутинг и декомпозирую работу на предсказуемые спринты.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-top">
+                        <span class="step-num">03</span>
+                        <span class="step-dot"></span>
+                    </div>
+                    <h3>AI-ассистирование</h3>
+                    <p>Использую современные LLM для генерации рутинного бойлерплейта, моковых данных и ускоренного поиска краевых сценариев.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-top">
+                        <span class="step-num">04</span>
+                        <span class="step-dot"></span>
+                    </div>
+                    <h3>Разработка и верстка</h3>
+                    <p>Пишу чистый типизированный TypeScript-код, собираю адаптивные компоненты и интегрирую API с обработкой всех стейтов.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-top">
+                        <span class="step-num">05</span>
+                        <span class="step-dot"></span>
+                    </div>
+                    <h3>Тесты и оптимизация</h3>
+                    <p>Проверяю доступность (a11y), отзывчивость на мобильных, минимизирую ререндеры и оптимизирую показатели Core Web Vitals.</p>
+                </div>
+
+                <div class="step-card step-card--launch">
+                    <div class="step-top">
+                        <span class="step-num">06</span>
+                        <span class="step-dot active"></span>
+                    </div>
+                    <h3>Деплой и передача</h3>
+                    <p>Финальная сборка, развертывание на продакшн-хостинге, передача исходников и технической документации.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS / CTA -->
+    <section class="cta reveal" id="contacts" aria-labelledby="cta-title">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Связь</span>
+                <h2 id="cta-title">Есть идея проекта?</h2>
+                <p class="section-subtitle">Давайте обсудим задачу, стек и превратим идею в быстрый и надежный веб-продукт.</p>
+            </div>
+
+            <div class="cta__grid">
+                <a href="https://t.me/tarnex_new" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Telegram</span>
+                        <strong class="contact-val">@tarnex_new</strong>
+                    </div>
+                    <span class="contact-action">Написать ↗</span>
+                </a>
+
+                <a href="https://github.com/Augmented-Engineer" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">GitHub</span>
+                        <strong class="contact-val">Augmented-Engineer</strong>
+                    </div>
+                    <span class="contact-action">Репозитории ↗</span>
+                </a>
+
+                <a href="mailto:Augmented_Engineer@proton.me" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Email</span>
+                        <strong class="contact-val">Augmented_Engineer@proton.me</strong>
+                    </div>
+                    <span class="contact-action">Отправить ↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <span class="footer-copy">© 2026 Augmented Engineer. Frontend Development</span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-badge"><span class="badge-dot"></span> Built with precision</span>
+            </div>
+        </div>
+    </footer>
+</main>
+
+<script src="scripts/menu.js" defer></script>
+<script src="scripts/theme.js" defer></script>
+
+<script>
+    (() => {
+        const fallbackTimeout = setTimeout(() => {
+            if (typeof window.markSiteCssLoaded === 'function') {
+                window.markSiteCssLoaded();
+            }
+        }, 5000);
+
+        window.addEventListener('load', () => {
+            clearTimeout(fallbackTimeout);
+        }, { once: true });
+    })();
+</script>
+
+<script id="scroll-reveal-script">
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -50px 0px",
+      threshold: 0.1
+    });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  });
+</script>
+
+</body>
+</html>

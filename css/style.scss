@@ -1,0 +1,58 @@
+@use 'global/resetStyles';
+@use 'global/variables';
+@use 'header';
+@use 'top-page-elements';
+@use 'about-me';
+@use 'workflow';
+@use 'projects';
+@use 'idea-project';
+@use 'about/svg-style';
+
+
+
+
+@use "seamless";
+@use "why-me";
+
+@use "light-theme";
+
+@use "responsive";
+
+@use "preloader";
+
+/* Ультратонкий скроллбар 6px */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 191, 0.4) !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 191, 0.8) !important;
+  box-shadow: 0 0 10px #00e5bf !important;
+}
+
+html, body {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(0, 229, 191, 0.4) transparent !important;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(13, 148, 136, 0.4) !important;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 148, 136, 0.8) !important;
+}
+
+[data-theme="light"] {
+  scrollbar-color: rgba(13, 148, 136, 0.4) transparent !important;
+}

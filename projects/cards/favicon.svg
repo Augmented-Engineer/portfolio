@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151a23" />
+      <stop offset="100%" stop-color="#0b0e14" />
+    </linearGradient>
+    <linearGradient id="cardAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#cardBg)" stroke="#262f3d" stroke-width="2" />
+  <rect x="14" y="14" width="30" height="38" rx="6" fill="none" stroke="#475569" stroke-width="2.5" opacity="0.6" />
+  <rect x="20" y="10" width="30" height="38" rx="6" fill="url(#cardAccent)" />
+  <line x1="26" y1="20" x2="44" y2="20" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="26" y1="28" x2="38" y2="28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+  <circle cx="41" cy="38" r="3" fill="#ffffff" />
+</svg>

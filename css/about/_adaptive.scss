@@ -1,0 +1,817 @@
+@media (max-width: 1200px) {
+  .hero,
+  .about,
+  .advantages,
+  .portfolio,
+  .workflow,
+  .cta {
+    margin-inline: 30px;
+    padding-inline: 40px;
+  }
+
+  .hero {
+    .hero-content {
+      gap: 50px;
+    }
+
+    .hero-image img {
+      max-width: 430px;
+    }
+  }
+
+  .about {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+
+      justify-items: center;
+      text-align: center;
+    }
+
+    .about-text {
+      align-items: center;
+
+      p {
+        margin-inline: auto;
+      }
+    }
+
+    .about-photo {
+      margin-inline: auto;
+      max-width: 280px;
+    }
+
+    .about-stats {
+      width: 100%;
+      max-width: 700px;
+    }
+  }
+
+  .workflow {
+    .workflow__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .workflow__item {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+
+   //Header / layout / tablet
+@media (max-width: 992px) {
+  .header {
+    padding-inline: 30px;
+
+    .container {
+      position: relative;
+    }
+
+    @media (max-width: 992px) {
+      .header {
+        .nav {
+          position: absolute;
+
+          top: calc(100% + 10px);
+          left: 50%;
+
+          width: calc(100% - 20px);
+          box-sizing: border-box;
+
+          padding: 25px;
+
+          border: 1px solid var(--card-border);
+          border-radius: 20px;
+
+          background: rgba(17, 19, 30, 0.68);
+
+          -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+
+          box-shadow:
+                  0 20px 50px rgba(0, 0, 0, 0.3);
+
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+
+          transform: translateX(-50%) translateY(-15px);
+
+          transition:
+                  opacity 0.3s ease,
+                  visibility 0.3s ease,
+                  transform 0.3s ease;
+
+          z-index: 1001;
+
+          ul {
+            position: relative;
+            z-index: 1;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          &.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+
+            transform: translateX(-50%) translateY(0);
+          }
+        }
+      }
+    }
+
+    .burger {
+      display: flex;
+    }
+  }
+
+  .hero,
+  .about,
+  .advantages,
+  .portfolio,
+  .workflow,
+  .cta {
+    margin-inline: 30px;
+
+    padding-block: 50px;
+    padding-inline: 40px;
+  }
+
+     //Hero / tablet
+  .hero {
+    .hero-image {
+      display: none;
+    }
+
+    .hero-content {
+      display: grid;
+
+      grid-template-columns: minmax(0, 1fr);
+
+      width: 100%;
+      min-width: 0;
+
+      gap: 40px;
+
+      text-align: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+
+      h1 {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+
+      p {
+        width: 100%;
+        max-width: 620px;
+
+        margin-inline: auto;
+
+        overflow-wrap: break-word;
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      max-width: 100%;
+
+      flex-direction: column;
+
+      gap: 14px;
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        max-width: 340px;
+        min-width: 0;
+
+        box-sizing: border-box;
+      }
+    }
+
+    .socials {
+      width: 100%;
+
+      ul {
+        justify-content: center;
+      }
+    }
+  }
+
+  .about {
+    .about-grid {
+      grid-template-columns: 1fr;
+
+      gap: 45px;
+    }
+
+    .about-text {
+      text-align: center;
+
+      p {
+        margin-inline: auto;
+      }
+    }
+
+    .about-photo {
+      margin-inline: auto;
+
+      max-width: 260px;
+    }
+
+    .about-stats {
+      width: 100%;
+    }
+  }
+
+  .advantages {
+    .advantages__list {
+      grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+      );
+    }
+  }
+
+  .portfolio {
+    .portfolio__grid {
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 300px), 1fr)
+      );
+
+      gap: 24px;
+    }
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    text-align: center;
+
+    .cta__content p {
+      margin-inline: auto;
+    }
+
+    .contacts {
+      align-items: center;
+
+      width: 100%;
+    }
+
+    .contacts__list {
+      width: 100%;
+      max-width: 700px;
+
+      margin-inline: auto;
+
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+      );
+
+      gap: 20px;
+    }
+
+    .button {
+      margin-inline: auto;
+    }
+  }
+}
+
+   //Light theme / mobile menu
+[data-theme="light"] {
+  .header {
+    .nav {
+      background: rgba(255, 255, 255, 0.92);
+
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+   //Mobile
+@media (max-width: 768px) {
+  .header {
+    padding-inline: 20px;
+
+    .container {
+      min-height: 70px;
+    }
+
+    .btn-outline {
+      display: none;
+    }
+  }
+
+  .hero,
+  .about,
+  .advantages,
+  .portfolio,
+  .workflow,
+  .cta {
+    margin-inline: 20px;
+    padding: 40px 30px;
+
+    border-radius: var(--radius-lg);
+  }
+
+  .hero,
+  .about,
+  .advantages,
+  .portfolio,
+  .workflow,
+  .cta {
+    h2 {
+      font-size: 2.3rem !important;
+      text-align: center;
+    }
+  }
+
+     //Hero / mobile
+  .hero {
+    .hero-image {
+      display: none;
+    }
+
+    .hero-content {
+      display: grid;
+
+      grid-template-columns: minmax(0, 1fr);
+
+      width: 100%;
+      min-width: 0;
+
+      gap: 35px;
+
+      text-align: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+
+      h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(2.7rem, 10vw, 4rem);
+        line-height: 1.05;
+
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+
+      p {
+        width: 100%;
+        max-width: 550px;
+
+        margin-inline: auto;
+
+        overflow-wrap: break-word;
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+      max-width: 100%;
+
+      gap: 14px;
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        max-width: 340px;
+        min-width: 0;
+
+        box-sizing: border-box;
+      }
+    }
+
+    .socials {
+      width: 100%;
+
+      ul {
+        justify-content: center;
+      }
+    }
+  }
+
+  .about {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .about-text {
+      text-align: center;
+
+      p {
+        margin-inline: auto;
+      }
+    }
+
+    .about-photo {
+      margin-inline: auto;
+      max-width: 240px;
+    }
+
+    .about-stats {
+      width: 100%;
+
+      .stat {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .btn-outline {
+        width: 100%;
+      }
+    }
+  }
+
+  .advantages {
+    .advantages__list {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .advantage-card {
+      padding: 24px;
+    }
+  }
+
+  .portfolio {
+    .portfolio__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .project-card {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .project-content {
+      padding: 22px;
+      gap: 16px;
+    }
+
+    .project-tags {
+      justify-content: center;
+    }
+
+    h3 {
+      font-size: 1.45rem;
+    }
+
+    .project-footer {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      width: 100%;
+      min-width: 0;
+      flex: none;
+    }
+  }
+
+  .workflow {
+    .workflow__list {
+      grid-template-columns: 1fr;
+    }
+
+    .workflow__item {
+      flex-direction: column;
+      text-align: center;
+      gap: 18px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    text-align: center;
+
+    .cta__content p {
+      margin-inline: auto;
+    }
+
+    .contacts {
+      width: 100%;
+
+      .contacts__list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .tg,
+      .git,
+      .email {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        .teleg-text,
+        .git-text,
+        .email-text {
+          align-items: center;
+        }
+      }
+
+      .button {
+        width: 100%;
+        max-width: 320px;
+
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+   //Small mobile
+@media (max-width: 480px) {
+  .hero,
+  .about,
+  .advantages,
+  .portfolio,
+  .workflow,
+  .cta {
+    margin-inline: 15px;
+    margin-top: 30px;
+
+    padding: 30px 20px;
+
+    border-radius: var(--radius-lg);
+  }
+
+  .hero,
+  .about,
+  .advantages,
+  .portfolio,
+  .workflow,
+  .cta {
+    h2 {
+      font-size: 2rem !important;
+      text-align: center;
+    }
+  }
+
+     //Hero / small mobile
+  .hero {
+    .hero-image {
+      display: none;
+    }
+
+    .badge {
+      width: 100%;
+      max-width: 100%;
+
+      box-sizing: border-box;
+
+      justify-content: center;
+    }
+
+    .hero-content {
+      display: grid;
+
+      grid-template-columns: minmax(0, 1fr);
+
+      width: 100%;
+      min-width: 0;
+
+      gap: 30px;
+    }
+
+    .hero-text {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+
+      h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(2.4rem, 11vw, 3.2rem);
+        line-height: 1.05;
+
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+
+      p {
+        width: 100%;
+        max-width: 100%;
+
+        margin-inline: auto;
+
+        overflow-wrap: break-word;
+      }
+    }
+
+    .hero-buttons {
+      width: 100%;
+      max-width: 100%;
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+
+        box-sizing: border-box;
+      }
+    }
+
+    .socials {
+      width: 100%;
+
+      ul {
+        justify-content: center;
+      }
+    }
+  }
+
+  .about {
+    .about-grid {
+      gap: 30px;
+    }
+
+    .about-photo {
+      max-width: 180px;
+    }
+
+    .about-text {
+      text-align: center;
+
+      p {
+        margin-inline: auto;
+      }
+    }
+
+    .about-stats {
+      .btn-outline {
+        width: 100%;
+      }
+    }
+  }
+
+  .advantages {
+    .advantage-card {
+      padding: 20px;
+    }
+
+    .wrapper-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .portfolio {
+    .portfolio__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .project-content {
+      padding: 18px;
+      gap: 16px;
+    }
+
+    .project-tags {
+      justify-content: center;
+
+      span {
+        font-size: 0.75rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.35rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .project-footer {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      width: 100%;
+      height: 46px;
+      min-width: 0;
+      flex: none;
+    }
+  }
+
+  .workflow {
+    .workflow__item {
+      padding: 20px;
+    }
+
+    .workflow__number {
+      width: 70px;
+      height: 70px;
+
+      font-size: 1.2rem;
+    }
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    text-align: center;
+
+    .cta__content {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        max-width: 100%;
+        margin-inline: auto;
+      }
+    }
+
+    .contacts {
+      width: 100%;
+
+      .contacts__list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .tg,
+      .git,
+      .email {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        padding: 22px 18px;
+        gap: 14px;
+
+        .teleg-text,
+        .git-text,
+        .email-text {
+          align-items: center;
+        }
+      }
+
+      .button {
+        width: 100%;
+        max-width: 280px;
+        height: 50px;
+
+        margin: 10px auto 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,210 @@
+// Комплексные стили для светлой темы
+[data-theme="light"] {
+  .header .nav,
+  .header .nav ul,
+  .header .nav li,
+  .header .nav a {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  // Фон и сетка
+  --bg-page: #f8fafc;
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+
+  body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    background-image: 
+      linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+  }
+
+  // 1. Шапка (Header)
+  .header {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+
+    .nav a {
+      color: #475569 !important;
+      &:hover {
+        color: #0f172a !important;
+      }
+      &.active {
+        color: #0f172a !important;
+        font-weight: 700 !important;
+      }
+    }
+
+    .btn-header-contact {
+      background: rgba(13, 148, 136, 0.08) !important;
+      border: 1px solid rgba(13, 148, 136, 0.3) !important;
+      color: #0f766e !important;
+
+      &:hover {
+        background: #0d9488 !important;
+        color: #ffffff !important;
+      }
+    }
+
+    .theme-toggle, button {
+      color: #0f172a !important;
+      border-color: rgba(203, 213, 225, 0.8) !important;
+    }
+  }
+
+  // 2. Секция Hero
+  .hero {
+    .status-pill {
+      background: rgba(13, 148, 136, 0.08) !important;
+      border-color: rgba(13, 148, 136, 0.25) !important;
+      color: #0f766e !important;
+
+      .status-dot {
+        background: #0d9488 !important;
+        box-shadow: 0 0 8px rgba(13, 148, 136, 0.4) !important;
+      }
+    }
+
+    .hero-title {
+      color: #0f172a !important;
+
+      span {
+        color: #0d9488 !important;
+        text-shadow: none !important;
+      }
+    }
+
+    .hero-desc {
+      color: #475569 !important;
+    }
+
+    .hero-actions {
+      .btn-primary {
+        background: #0d9488 !important;
+        border-color: #0d9488 !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25) !important;
+
+        &:hover {
+          background: #0f766e !important;
+          box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35) !important;
+        }
+      }
+
+      .btn-outline {
+        background: #ffffff !important;
+        border-color: #cbd5e1 !important;
+        color: #334155 !important;
+
+        &:hover {
+          border-color: #0d9488 !important;
+          color: #0f766e !important;
+        }
+      }
+    }
+  }
+
+  // 3. Tech Stack
+  .tech-stack-hero {
+    .tech-stack-title {
+      color: #0f172a !important;
+    }
+
+    .tech-pill {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      color: #334155 !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+
+      &:hover {
+        border-color: #0d9488 !important;
+        background: rgba(13, 148, 136, 0.05) !important;
+        color: #0f766e !important;
+      }
+    }
+  }
+
+  // 4. Терминал (оставляем его темным окном для контраста, но смягчаем рамку)
+  .dev-card {
+    border-color: rgba(203, 213, 225, 0.8) !important;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12) !important;
+  }
+
+  // 5. Все карточки на странице (Обо мне, Преимущества, Проекты, Воркфлоу, Контакты)
+  .bento-card, .adv-card, .project-card, .step-card, .contact-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
+
+    &:hover {
+      border-color: #0d9488 !important;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08) !important;
+    }
+  }
+
+  // Заголовки и тексты в карточках
+  .bento-card h2, .section-header h2, .adv-card h3, .project-title-row h3, .step-card h3, .contact-val {
+    color: #0f172a !important;
+  }
+
+  .about-lead {
+    color: #1e293b !important;
+  }
+
+  .about-subtext, .section-subtitle, .adv-card p, .project-content p, .step-card p, .contact-label {
+    color: #475569 !important;
+  }
+
+  .section-badge, .bento-badge {
+    background: rgba(13, 148, 136, 0.08) !important;
+    border-color: rgba(13, 148, 136, 0.25) !important;
+    color: #0d9488 !important;
+    box-shadow: none !important;
+  }
+
+  .stat-number {
+    color: #0d9488 !important;
+    text-shadow: none !important;
+  }
+
+  .step-top .step-num {
+    color: #cbd5e1 !important;
+  }
+
+  .step-card:hover .step-top .step-num {
+    color: #0d9488 !important;
+    text-shadow: none !important;
+  }
+
+  // Карточки проектов: мокап браузера
+  .project-preview {
+    background: #f1f5f9 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .project-tags span {
+    background: rgba(13, 148, 136, 0.08) !important;
+    border-color: rgba(13, 148, 136, 0.2) !important;
+    color: #0f766e !important;
+  }
+
+  // Футер
+  .footer {
+    background: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+
+    .footer-copy {
+      color: #64748b !important;
+    }
+    .footer-badge {
+      color: #475569 !important;
+    }
+  }
+}

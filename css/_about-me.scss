@@ -1,0 +1,140 @@
+// Bento Grid для блока «Обо мне»
+.about {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  background: transparent;
+
+  .about-bento {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .bento-card {
+    background: rgba(15, 23, 34, 0.75);
+    border: 1px solid rgba(0, 229, 191, 0.16);
+    border-radius: 20px;
+    padding: 36px;
+    backdrop-filter: blur(14px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+
+    &:hover {
+      border-color: rgba(0, 229, 191, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 229, 191, 0.08);
+    }
+  }
+
+  .bento-card--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .bento-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(0, 229, 191, 0.08);
+      border: 1px solid rgba(0, 229, 191, 0.22);
+      color: #00e5bf;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+
+    .about-lead {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #e2f1f5;
+      font-weight: 500;
+      margin: 0 0 14px;
+    }
+
+    .about-subtext {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #8da4be;
+      margin: 0;
+    }
+  }
+
+  .bento-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bento-stat {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 28px;
+
+    .stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #00e5bf;
+      text-shadow: 0 0 20px rgba(0, 229, 191, 0.35);
+      flex-shrink: 0;
+    }
+
+    .stat-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 229, 191, 0.1);
+      border: 1px solid rgba(0, 229, 191, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      .stat-symbol {
+        font-size: 1.3rem;
+        color: #00e5bf;
+      }
+    }
+
+    .stat-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+      strong {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      span {
+        font-size: 0.88rem;
+        color: #8da4be;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .about .about-bento {
+    grid-template-columns: 1fr;
+  }
+}
