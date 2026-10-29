@@ -1,0 +1,47 @@
+.icon,
+.social-icon,
+.contact-icon {
+  width: 28px;
+  height: 28px;
+
+  color: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.8;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
+}
+
+a:hover .social-icon,
+.advantage-card:hover .icon,
+.stat:hover .icon,
+.tg:hover .contact-icon,
+.git:hover .contact-icon,
+.email:hover .contact-icon {
+  transform: scale(1.15);
+}
+.socials {
+
+  a {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    .social-icon {
+      width: 22px;
+      height: 22px;
+
+      display: block;
+
+      overflow: visible;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+// Новая палитра: Deep Cyan / Tech Cyberpunk
+:root {
+  --color-bg: #090e14;
+  --color-surface: #0f1722;
+  --color-surface-light: #152232;
+  --color-primary: #00e5bf;
+  --color-primary-hover: #14f5ce;
+  --color-white: #ffffff;
+  --color-text: #f1f6fc;
+  --color-text-secondary: #8da4be;
+  --color-gray: #627b97;
+  --gradient-primary: linear-gradient(135deg, #00e5bf 0%, #0284c7 100%);
+  --color-border: #1a2a3e;
+  --color-success: #3ccf91;
+  --color-danger: #ff5d73;
+  --color-warning: #f8c146;
+  --card-bg: #0f1722;
+  --card-bg-hover: #152232;
+  --card-border: #1a2a3e;
+  --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 18px 40px rgba(0, 229, 191, 0.12);
+  --surface-glass: rgba(15, 23, 34, 0.6);
+  --surface-glass-hover: rgba(21, 34, 50, 0.8);
+  --surface-accent: rgba(0, 229, 191, 0.1);
+  --surface-accent-hover: rgba(0, 229, 191, 0.18);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition: .3s ease;
+  --container-width: 1280px;
+  --container-padding: 20px;
+  --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  // Кибер-сетка для фона
+  --grid-line: rgba(0, 229, 191, 0.04);
+}
+
+[data-theme="light"] {
+  --color-bg: #f3f7fb;
+  --color-surface: #ffffff;
+  --color-surface-light: #f8fafc;
+  --color-primary: #00a88f;
+  --color-primary-hover: #008f7a;
+  --color-text: #0e1726;
+  --color-text-secondary: #52637a;
+  --color-border: #d7e2ee;
+  --card-bg: #ffffff;
+  --card-bg-hover: #f8fafc;
+  --card-border: #d7e2ee;
+  --card-shadow: 0 8px 24px rgba(14, 23, 38, 0.06);
+  --card-shadow-hover: 0 18px 40px rgba(0, 168, 143, 0.15);
+  --surface-glass: rgba(255, 255, 255, 0.8);
+  --surface-glass-hover: rgba(248, 250, 252, 0.95);
+  --surface-accent: rgba(0, 168, 143, 0.08);
+  --grid-line: rgba(0, 168, 143, 0.05);
+}

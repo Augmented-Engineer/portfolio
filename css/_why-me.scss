@@ -1,0 +1,115 @@
+// Стили для секции «Почему я»
+.advantages {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  background: transparent;
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 48px;
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 22px !important;
+      border-radius: 999px;
+      background: rgba(0, 229, 191, 0.12) !important;
+      border: 1px solid rgba(0, 229, 191, 0.35) !important;
+      color: #00e5bf !important;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase;
+      margin-bottom: 18px !important;
+      box-shadow: 0 0 18px rgba(0, 229, 191, 0.2);
+    }
+
+    h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: clamp(2.2rem, 3.8vw, 3rem) !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0;
+    }
+  }
+
+  .advantages__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .adv-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    background: rgba(15, 23, 34, 0.75);
+    border: 1px solid rgba(0, 229, 191, 0.16);
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+    &:hover {
+      border-color: rgba(0, 229, 191, 0.38);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 229, 191, 0.08);
+
+      .adv-icon {
+        background: #00e5bf;
+        color: #05131a;
+        transform: scale(1.06);
+        box-shadow: 0 0 20px rgba(0, 229, 191, 0.4);
+      }
+    }
+
+    .adv-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 229, 191, 0.1);
+      border: 1px solid rgba(0, 229, 191, 0.25);
+      color: #00e5bf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      transition: all 0.3s ease;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #8da4be;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .advantages .advantages__grid {
+    grid-template-columns: 1fr;
+  }
+}

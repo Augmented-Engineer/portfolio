@@ -1,0 +1,61 @@
+.burger {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  span {
+    display: block;
+
+    width: 28px;
+    height: 2px;
+
+    margin: 6px auto;
+
+    border-radius: 10px;
+
+    background: var(--color-text);
+
+    transition: .35s ease;
+  }
+}
+
+.burger.active {
+
+  span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, .45);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .35s ease;
+
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

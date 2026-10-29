@@ -1,0 +1,230 @@
+// Шапка сайта и меню для обеих тем
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  // Сброс любой подложки под меню
+  .nav,
+  .nav ul,
+  .nav li,
+  .nav a {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding-block: 16px;
+  background: rgba(9, 14, 20, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    .logo-v {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #00e5bf;
+      text-shadow: 0 0 14px rgba(0, 229, 191, 0.45);
+      letter-spacing: -0.05em;
+      transition: transform 0.2s ease, color 0.3s ease;
+    }
+
+    &:hover .logo-v {
+      transform: scale(1.06);
+    }
+  }
+
+  .nav {
+    background: transparent;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #8da4be;
+      text-decoration: none;
+      padding: 6px 2px;
+      transition: color 0.2s ease;
+
+      // Тонкая аккуратная черта под словом
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 100%;
+        height: 2px;
+        background: #00e5bf;
+        border-radius: 2px;
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      &:hover {
+        color: #ffffff;
+
+        &::after {
+          transform: translateX(-50%) scaleX(0.5);
+        }
+      }
+
+      &.active {
+        color: #ffffff;
+        font-weight: 700;
+
+        &::after {
+          transform: translateX(-50%) scaleX(1);
+          box-shadow: 0 0 8px #00e5bf;
+        }
+      }
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .btn-header-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 229, 191, 0.35);
+      background: rgba(0, 229, 191, 0.06);
+      color: #e2f1f5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: #00e5bf;
+        border-color: #00e5bf;
+        color: #05131a;
+        box-shadow: 0 0 18px rgba(0, 229, 191, 0.4);
+        transform: translateY(-1px);
+      }
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 34, 0.6);
+      color: #8da4be;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #ffffff;
+        border-color: rgba(0, 229, 191, 0.35);
+      }
+    }
+  }
+}
+
+// Переопределения для светлой темы
+[data-theme="light"] .header {
+  // Сброс любой подложки под меню
+  .nav,
+  .nav ul,
+  .nav li,
+  .nav a {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+
+  .logo-v {
+    color: #0d9488;
+    text-shadow: none;
+  }
+
+  .nav a {
+    color: #475569;
+
+    &::after {
+      background: #0d9488;
+      box-shadow: none;
+    }
+
+    &:hover {
+      color: #0f172a;
+    }
+
+    &.active {
+      color: #0f172a;
+    }
+  }
+
+  .header-actions {
+    .btn-header-contact {
+      background: rgba(13, 148, 136, 0.08);
+      border-color: rgba(13, 148, 136, 0.35);
+      color: #0f766e;
+
+      &:hover {
+        background: #0d9488;
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+      }
+    }
+
+    .theme-toggle {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #334155;
+
+      &:hover {
+        color: #0f172a;
+        border-color: #0d9488;
+      }
+    }
+  }
+}
